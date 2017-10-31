@@ -1,0 +1,3 @@
+HQL语句中 :
+Query query=session.createQuery(from Student where----);
+查询的是对象，Query操作的是对象 是Student这个类

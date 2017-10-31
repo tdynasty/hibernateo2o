@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 映射文件 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+<hibernate-mapping>
+<class name="pojo.Category" table="CATEGORY">
+<id name="cid" column="CID">        
+   <generator class="identity"/>
+</id>
+ <property name="cname" column="CNAME" />
+ <!-- 如果加了set类型数据 就需要在映射文件中加入set标记 -->
+ <set name="books" cascade="all" ><!-- set属性名 --><!-- set对象的名 --><!-- cascade:级联操作 操作一方就可以控制多方 -->
+ <key column="CID"></key><!-- 多方表的外键 -->
+ <one-to-many class="pojo.Book" /><!-- 多方的路径 -->
+ </set>
+</class>
+</hibernate-mapping>

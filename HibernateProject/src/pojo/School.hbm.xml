@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 映射文件 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+<hibernate-mapping>
+<class name="pojo.School" table="SCHOOL">    
+<id name="id" column="ID">        
+   <generator class="assigned"/>
+   </id>
+ <property name="sname" column="SNAME" />
+ <one-to-one name="header" class="pojo.Header" constrained="true" cascade="all" />
+ <!-- ..............被动方对象名。。。。。被动方包名。类名。。constrained代表当前主键上存在外键的约束。。-->
+</class>
+</hibernate-mapping>

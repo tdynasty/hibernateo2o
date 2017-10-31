@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 映射文件 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+<hibernate-mapping>
+<class name="pojo.Header" table="HEADER">    
+<id name="id" column="ID">
+   <generator class="foreign">
+     <param name="property">school</param><!-- 主动方的对象名 -->
+   </generator>
+   </id>
+ <property name="hname" column="HNAME" />
+ <one-to-one name="school" class="pojo.School" cascade="all"/>
+  <!-- ..............主动方对象名。。。。。主动方包名。类名-->
+</class>
+</hibernate-mapping>

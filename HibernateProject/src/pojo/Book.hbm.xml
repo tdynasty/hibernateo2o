@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 映射文件 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" > 
+<hibernate-mapping>
+<class name="pojo.Book" table="BOOK">    <!-- 类对应一个表--> 
+<id name="bid" column="BID">        
+   <generator class="identity"/>
+</id>
+<property name="bname" column="BNAME" />
+<property name="price" column="PRICE" />
+<many-to-one name="category" class="pojo.Category" cascade="all"><!-- class:一方的对象 --><!-- 级联操作 多方增删改查都可以对一方进行操作 -->
+<!-- name表示在多方中定义一方对象的名字 -->
+	<column name="cid"></column><!-- 对应多表的外键 -->
+</many-to-one>
+</class>
+</hibernate-mapping>
